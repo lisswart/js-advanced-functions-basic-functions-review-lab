@@ -61,9 +61,10 @@ function actionApplyer(num, arr) {
         // const sum = arr[1](product);
         // const modulo = arr[2](sum);
         // return modulo;
-        return modulo = arr[2](arr[1](arr[0](num)));
-        
+        return arr[2](arr[1](arr[0](num)));        
     }
 }
 
 console.log(actionApplyer(13, arrayOfTransforms));
+
+
