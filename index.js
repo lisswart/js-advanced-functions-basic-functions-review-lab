@@ -13,6 +13,9 @@ function wrapAdjective(style='*') {
     }
 }
 
+// let encouragingPromptFunction = wrapAdjective('#####')('a dedicated programmer');
+// console.log(encouragingPromptFunction);
+
 const Calculator = {function: 'add'};
 Calculator.add = function(num1, num2) {
     return (num1 + num2);
@@ -39,5 +42,22 @@ Calculator.multiply = function(num1, num2) {
     return num1 * num2;
 }
 
-const product = Calculator.multiply(1.5, 2);
-console.log(product);
+// const product = Calculator.multiply(1.5, 2);
+// console.log(product);
+
+function actionApplyer(num, arrayOfTransforms) {
+    
+    if(arrayOfTransforms.length === 0) {
+        return num;
+    }
+    else{
+        arrayOfTransforms = [
+            function(num){ return num * 2 },
+            function(num){ return num + 1000},
+            function(num){ return num % 7 }
+          ]
+        return ((num * 2) + 1000) % 7;
+        
+    }
+}
+
