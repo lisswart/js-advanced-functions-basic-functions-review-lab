@@ -45,19 +45,25 @@ Calculator.multiply = function(num1, num2) {
 // const product = Calculator.multiply(1.5, 2);
 // console.log(product);
 
-function actionApplyer(num, arrayOfTransforms) {
+const arrayOfTransforms = [
+    function(num){ return num * 2 },
+    function(num){ return num + 1000},
+    function(num){ return num % 7 }
+  ];
+
+function actionApplyer(num, arr) {
     
-    if(arrayOfTransforms.length === 0) {
+    if(arr.length === 0) {
         return num;
     }
     else{
-        arrayOfTransforms = [
-            function(num){ return num * 2 },
-            function(num){ return num + 1000},
-            function(num){ return num % 7 }
-          ]
-        return ((num * 2) + 1000) % 7;
+        // const product = arr[0](num);
+        // const sum = arr[1](product);
+        // const modulo = arr[2](sum);
+        // return modulo;
+        return modulo = arr[2](arr[1](arr[0](num)));
         
     }
 }
 
+console.log(actionApplyer(13, arrayOfTransforms));
